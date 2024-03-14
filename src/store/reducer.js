@@ -41,7 +41,7 @@ const reducer = (state = initalState, action) => {
             {
                 const product = action.data;
                 console.log(product, "lll")
-                const findProduct = state.buyies?.findIndex(p => p.Name == product.Name)
+                const findProduct = state.buyies?.findIndex(p => p.Name === product.Name)
                 console.log("gggg", findProduct)
                 findProduct ? (state[findProduct].Count) += (product.Count) :
                     state.buyies = [...state.buyies, product]
@@ -57,7 +57,7 @@ const reducer = (state = initalState, action) => {
             {
                 const id = action.data;
                 console.log(id)
-                const filtered = state.recipes.filter((recipe) => recipe.Id != id)
+                const filtered = state.recipes.filter((recipe) => recipe.Id !== id)
                 state.recipes = filtered;
                 return {
                     ...state,
@@ -69,7 +69,7 @@ const reducer = (state = initalState, action) => {
             {
                 const id = action.data;
                 console.log(id)
-                const filtered = state.recipes.filter((recipe) => recipe.Id != id)
+                const filtered = state.recipes.filter((recipe) => recipe.Id !== id)
                 state.buyies = filtered;
                 return {
                     ...state,

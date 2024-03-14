@@ -83,7 +83,7 @@ const Recipes = () => {
         </div>
         </div>
         <div class="cards-container">
-        {recipes.map(x => (!selectedCategory || x.CategoryId == selectedCategory) && (!selectedDuration || checkDuration(x.Duration)) && (!selectedDifficulty || selectedDifficulty == x.Difficulty) ?
+        {recipes.map(x => (!selectedCategory || x.CategoryId === selectedCategory) && (!selectedDuration || checkDuration(x.Duration)) && (!selectedDifficulty || selectedDifficulty === x.Difficulty) ?
             <div  class="card border-secondary mb-5"  key={x.Id}>
                 <div class="card-header">{x.Name}</div> 
                 <img class="card-text" src={x.Img}></img>
